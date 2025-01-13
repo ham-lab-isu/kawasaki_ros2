@@ -1,7 +1,7 @@
 #pragma once
 
 #include <rclcpp/rclcpp.hpp>
-#include <khi_robot_interfaces/srv/khi_robot_cmd.hpp>
+#include <khi_robot_msgs/srv/khi_robot_cmd.hpp>
 #include <string>
 #include <khi_robot_behavior_tree/khi_robot_bt_nodes.h>
 #include <chrono>
@@ -70,7 +70,7 @@ public:
     // 2. Create the service client (only once)
     if (!client_)
     {
-      client_ = node_->create_client<khi_robot_interfaces::srv::KhiRobotCmd>("khi_robot_cmd");
+      client_ = node_->create_client<khi_robot_msgs::srv::KhiRobotCmd>("khi_robot_cmd");
       if (!client_->wait_for_service(std::chrono::seconds(2)))
       {
         RCLCPP_ERROR(node_->get_logger(),
@@ -80,7 +80,7 @@ public:
     }
 
     // 3. Create the request and populate fields
-    request_ = std::make_shared<khi_robot_interfaces::srv::KhiRobotCmd::Request>();
+    request_ = std::make_shared<khi_robot_msgs::srv::KhiRobotCmd::Request>();
     request_->type = cmd_type_;
     request_->cmd  = cmd_;
 
@@ -140,11 +140,11 @@ private:
   rclcpp::Node::SharedPtr node_;
 
   // Client and future for sending service requests
-  rclcpp::Client<khi_robot_interfaces::srv::KhiRobotCmd>::SharedPtr client_;
-  rclcpp::Client<khi_robot_interfaces::srv::KhiRobotCmd>::SharedFuture future_;
+  rclcpp::Client<khi_robot_msgs::srv::KhiRobotCmd>::SharedPtr client_;
+  rclcpp::Client<khi_robot_msgs::srv::KhiRobotCmd>::SharedFuture future_;
 
   // Service request
-  khi_robot_interfaces::srv::KhiRobotCmd::Request::SharedPtr request_;
+  khi_robot_msgs::srv::KhiRobotCmd::Request::SharedPtr request_;
 
   // Internal data
   std::string cmd_type_;

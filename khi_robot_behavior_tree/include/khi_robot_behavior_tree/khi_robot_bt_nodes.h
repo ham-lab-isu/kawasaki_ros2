@@ -2,7 +2,7 @@
 
 #include <behaviortree_ros2/bt_service_node.hpp>
 #include <behaviortree_ros2/bt_topic_sub_node.hpp>
-#include <khi_robot_interfaces/srv/khi_robot_cmd.hpp>
+#include <khi_robot_msgs/srv/khi_robot_cmd.hpp>
 #include <sensor_msgs/msg/joint_state.hpp>
 #include <trajectory_msgs/msg/joint_trajectory.hpp>
 #include <string>
@@ -61,14 +61,14 @@ public:
 /**
  * @brief A Behavior Tree node that sends a service request to "khi_robot_cmd".
  */
-class KhiRobotCmd : public RosServiceNode<khi_robot_interfaces::srv::KhiRobotCmd>
+class KhiRobotCmd : public RosServiceNode<khi_robot_msgs::srv::KhiRobotCmd>
 {
 public:
   // Constructor with the (name, config, params) signature
   KhiRobotCmd(const std::string& name,
               const BT::NodeConfiguration& config,
               const BT::RosNodeParams& params)
-    : RosServiceNode<khi_robot_interfaces::srv::KhiRobotCmd>(name, config, params)
+    : RosServiceNode<khi_robot_msgs::srv::KhiRobotCmd>(name, config, params)
   {
   }
 

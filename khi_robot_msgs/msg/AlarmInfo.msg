@@ -33,4 +33,4 @@ string contents
 string description
 
 # reserved for future use: potential causes and their potential remedies (from CSV)
-khi_robot_interfaces/AlarmCauseRemedy[] help
+khi_robot_msgs/AlarmCauseRemedy[] help

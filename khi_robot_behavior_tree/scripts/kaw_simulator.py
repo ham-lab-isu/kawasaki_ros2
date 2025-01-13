@@ -1,7 +1,7 @@
 import rclpy
 from rclpy.node import Node
-from khi_robot_interfaces.srv import KhiRobotCmd
-from khi_robot_interfaces.msg import MotionReadyEnum
+from khi_robot_msgs.srv import KhiRobotCmd
+from khi_robot_msgs.msg import MotionReadyEnum
 from std_srvs.srv import Trigger
 
 class RobotServiceNode(Node):

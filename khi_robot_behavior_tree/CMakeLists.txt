@@ -12,7 +12,7 @@ endif()
 
 find_package(ament_cmake REQUIRED)
 find_package(behaviortree_ros2 REQUIRED)
-find_package(khi_robot_interfaces REQUIRED)
+find_package(khi_robot_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(trajectory_msgs REQUIRED)
 
@@ -21,7 +21,7 @@ target_include_directories(
   ${PROJECT_NAME}
   PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
          "$<INSTALL_INTERFACE:include>")
-ament_target_dependencies(${PROJECT_NAME} khi_robot_interfaces behaviortree_ros2
+ament_target_dependencies(${PROJECT_NAME} khi_robot_msgs behaviortree_ros2
                           sensor_msgs trajectory_msgs)
 target_compile_definitions(${PROJECT_NAME} PRIVATE BT_PLUGIN_EXPORT)
 
@@ -40,6 +40,6 @@ install(PROGRAMS scripts/kaw_simulator.py DESTINATION lib/${PROJECT_NAME})
 
 install(DIRECTORY config DESTINATION share/${PROJECT_NAME}/)
 
-ament_export_dependencies(behaviortree_ros2 khi_robot_interfaces sensor_msgs
+ament_export_dependencies(behaviortree_ros2 khi_robot_msgs sensor_msgs
                           trajectory_msgs)
 ament_package()

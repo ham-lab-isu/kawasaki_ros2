@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(khi_robot_interfaces)
+project(khi_robot_msgs)
 
 ###############################################################################
 # Dependencies
@@ -10,38 +10,10 @@ find_package(rosidl_default_generators REQUIRED)
 find_package(trajectory_msgs REQUIRED)
 
 ###############################################################################
-# Message definitions
-###############################################################################
-set(msg_files
-  msg/AlarmInfo.msg
-  msg/AlarmCauseRemedy.msg
-  msg/ErrorInfo.msg
-  msg/InformJobCrudResultCodes.msg
-  msg/InitTrajEnum.msg
-  msg/IoResultCodes.msg
-  msg/MotionReadyEnum.msg
-  msg/QueueResultEnum.msg
-  msg/SelectionResultCodes.msg
-)
-
-###############################################################################
 # Service definitions
 ###############################################################################
 set(srv_files
   srv/KhiRobotCmd.srv
-  srv/GetActiveAlarmInfo.srv
-  srv/ListInformJobs.srv
-  srv/QueueTrajPoint.srv
-  srv/ReadMRegister.srv
-  srv/ReadSingleIO.srv
-  srv/ReadGroupIO.srv
-  srv/ResetError.srv
-  srv/SelectMotionTool.srv
-  srv/StartTrajMode.srv
-  srv/StartPointQueueMode.srv
-  srv/WriteMRegister.srv
-  srv/WriteSingleIO.srv
-  srv/WriteGroupIO.srv
 )
 
 if(BUILD_TESTING)
