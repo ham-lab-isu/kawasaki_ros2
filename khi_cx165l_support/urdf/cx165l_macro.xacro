@@ -1,0 +1,294 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:property name="color_kawasaki_white" value="${225/255} ${236/255} ${218/255} 1.0"/>
+  <xacro:macro name="material_kawasaki_white">
+      <material name="">
+          <color rgba="${color_kawasaki_white}"/>
+      </material>
+  </xacro:macro>
+
+  <xacro:property name="color_kawasaki_black" value="${0/255} ${0/255} ${0/255} 1.0"/>
+  <xacro:macro name="material_kawasaki_black">
+      <material name="">
+          <color rgba="${color_kawasaki_black}"/>
+      </material>
+  </xacro:macro>
+
+  <xacro:macro name="khi_cx165l" params="prefix">
+    <xacro:include filename="$(find snp_isu_support)/urdf/cx.transmission.xacro" />
+    <xacro:include filename="$(find snp_isu_support)/urdf/common.gazebo.xacro" />
+
+    <!-- link mass [kg] -->
+    <!-- CURRENTLY ESIMATES - NEED DATA FROM KAWASAKI -->
+    <xacro:property name="j0_mass" value="310"/>
+    <xacro:property name="j1_mass" value="526"/>
+    <xacro:property name="j2_mass" value="9"/>
+    <xacro:property name="j3_mass" value="66"/>
+    <xacro:property name="j4_mass" value="109"/>
+    <xacro:property name="j5_mass" value="72"/>
+    <xacro:property name="j6_mass" value="3"/>
+    
+    <!-- joint limits [rad] -->
+    <xacro:property name="j1_lower_limit" value="${radians(-160)}"/>
+    <xacro:property name="j1_upper_limit" value="${radians( 160)}"/>
+    <xacro:property name="j2_lower_limit" value="${radians(-60)}"/>
+    <xacro:property name="j2_upper_limit" value="${radians( 80)}"/>
+    <xacro:property name="j3_lower_limit" value="${radians(-75)}"/>
+    <xacro:property name="j3_upper_limit" value="${radians( 95)}"/>
+    <xacro:property name="j4_lower_limit" value="${radians(-210)}"/>
+    <xacro:property name="j4_upper_limit" value="${radians( 210)}"/>
+    <xacro:property name="j5_lower_limit" value="${radians(-120)}"/>
+    <xacro:property name="j5_upper_limit" value="${radians( 120)}"/>
+    <xacro:property name="j6_lower_limit" value="${radians(-360)}"/>
+    <xacro:property name="j6_upper_limit" value="${radians( 360)}"/>
+
+    <!-- joint velocity limits [rad/s] -->
+    <xacro:property name="j1_velocity_limit" value="${radians(130)}"/>
+    <xacro:property name="j2_velocity_limit" value="${radians(125)}"/>
+    <xacro:property name="j3_velocity_limit" value="${radians(125)}"/>
+    <xacro:property name="j4_velocity_limit" value="${radians(180)}"/>
+    <xacro:property name="j5_velocity_limit" value="${radians(180)}"/>
+    <xacro:property name="j6_velocity_limit" value="${radians(280)}"/>
+
+    <!-- link inertial(TODO : set correct link inertial )-->
+    <xacro:macro name="default_inertial" params="mass">
+      <inertial>
+        <mass value="${mass}" />
+        <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1" />
+      </inertial>
+    </xacro:macro>
+
+    <!-- Link 0 -->
+    <link name="${prefix}base_link">
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                filename="package://khi_cx165l_support/meshes/collision/CX165L-BASE.STL" />
+            </geometry>
+            <xacro:material_kawasaki_white/>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                filename="package://khi_cx165l_support/meshes/collision/CX165L-BASE-HULL.STL" />
+            </geometry>
+        </collision>
+        <xacro:default_inertial mass="${j0_mass}"/>
+    </link>
+
+    <link name="${prefix}link1">
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                filename="package://khi_cx165l_support/meshes/visual/CX165L-J1.STL"/>
+            </geometry>
+            <xacro:material_kawasaki_white/>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                filename="package://khi_cx165l_support/meshes/collision/CX165L-J1-HULL.STL" />
+            </geometry>
+        </collision>
+        <xacro:default_inertial mass="${j1_mass}"/>
+    </link>
+
+    <link name="${prefix}link2">
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                filename="package://khi_cx165l_support/meshes/visual/CX165L-J2.STL" />
+            </geometry>
+            <xacro:material_kawasaki_white/>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                filename="package://khi_cx165l_support/meshes/collision/CX165L-J2-HULL.STL" />
+            </geometry>
+        </collision>
+        <xacro:default_inertial mass="${j2_mass}"/>
+    </link>
+
+    <link name="${prefix}link3">
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                filename="package://khi_cx165l_support/meshes/visual/CX165L-J3.STL" />
+            </geometry>
+            <xacro:material_kawasaki_white/>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                filename="package://khi_cx165l_support/meshes/collision/CX165L-J3-HULL.STL" />
+            </geometry>
+        </collision>
+        <xacro:default_inertial mass="${j3_mass}"/>
+    </link>
+
+    <link name="${prefix}link4">
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                filename="package://khi_cx165l_support/meshes/visual/CX165L-J4.STL"  />
+            </geometry>
+            <xacro:material_kawasaki_white/>
+        </visual>
+            <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                filename="package://khi_cx165l_support/meshes/collision/CX165L-J4-HULL.STL"  />
+            </geometry>
+        </collision>
+        <xacro:default_inertial mass="${j4_mass}"/>
+    </link>
+
+    <link name="${prefix}link5">
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                filename="package://khi_cx165l_support/meshes/visual/CX165L-J5.STL" />
+            </geometry>
+            <xacro:material_kawasaki_white/>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                filename="package://khi_cx165l_support/meshes/collision/CX165L-J5-HULL.STL"/>
+            </geometry>
+        </collision>
+        <xacro:default_inertial mass="${j5_mass}"/>
+    </link>
+
+    <link name="${prefix}link6">
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                filename="package://khi_cx165l_support/meshes/visual/CX165L-J6.STL" />
+            </geometry>
+            <xacro:material_kawasaki_white/>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                filename="package://khi_cx165l_support/meshes/collision/CX165L-J6-HULL.STL" />
+            </geometry>
+        </collision>
+        <xacro:default_inertial mass="${j6_mass}"/>
+    </link>
+    <link name="${prefix}base"/>
+    <link name="${prefix}tool0"/>
+
+    <!-- Link 1 -->
+    <joint name="${prefix}joint1" type="revolute">
+      <axis xyz="0 0 -1" rpy="0 0 0" />
+      <limit effort="1000.0" lower="${j1_lower_limit}" upper="${j1_upper_limit}" velocity="${j1_velocity_limit}"/>
+      <origin xyz="0 0 0.55" rpy="0 0 0" />
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}link1"/>
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+
+    <!-- Link 2 -->
+    <joint name="${prefix}joint2" type="revolute">
+      <axis xyz="0 1 0" rpy="0 0 0" />
+      <limit effort="1000.0" lower="${j2_lower_limit}" upper="${j2_upper_limit}" velocity="${j2_velocity_limit}"/>
+      <origin xyz="0.3 0.0 0" rpy="0 0 0" />
+      <parent link="${prefix}link1"/>
+      <child link="${prefix}link2"/>
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+
+    <!-- Link 3 -->
+    <joint name="${prefix}joint3" type="revolute">
+      <axis xyz="0 -1 0" rpy="0 0 0" />
+      <limit effort="1000.0" lower="${j3_lower_limit}" upper="${j3_upper_limit}" velocity="${j3_velocity_limit}"/>
+      <origin xyz="0 0 1.19" rpy="0 0 0" />
+      <parent link="${prefix}link2"/>
+      <child link="${prefix}link3"/>
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+    <!-- Link 4 -->
+    <joint name="${prefix}joint4" type="revolute">
+      <axis xyz="1 0 0" rpy="0 0 0" />
+      <limit effort="1000.0" lower="${j4_lower_limit}" upper="${j4_upper_limit}" velocity="${j4_velocity_limit}"/>
+      <origin xyz="1.19 0 0.3" rpy="0 0 0" />
+      <parent link="${prefix}link3"/>
+      <child link="${prefix}link4"/>
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+    <!-- Link 5 -->
+    <joint name="${prefix}joint5" type="revolute">
+      <axis xyz="0 -1 0" rpy="0 0 0" />
+      <limit effort="1000.0" lower="${j5_lower_limit}" upper="${j5_upper_limit}" velocity="${j5_velocity_limit}"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <parent link="${prefix}link4"/>
+      <child link="${prefix}link5"/>
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+    <!-- Link 6 -->
+    <joint name="${prefix}joint6" type="revolute">
+      <axis xyz="1 0 0" rpy="0 0 0" />
+      <limit effort="1000.0" lower="${j6_lower_limit}" upper="${j6_upper_limit}" velocity="${j6_velocity_limit}"/>
+      <origin xyz="0.235 0 0" rpy="0 0 0" />
+      <parent link="${prefix}link5"/>
+      <child link="${prefix}link6"/>
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+
+    <joint name="${prefix}link6_to_tool0" type="fixed">
+      <origin xyz="0 0 0" rpy="0 ${radians(90)} 0"/>
+      <parent link="${prefix}link6"/>
+      <child link="${prefix}tool0"/>
+    </joint>
+
+    <joint name="${prefix}base_link_to_base" type="fixed">
+      <origin xyz="0 0 0.650" rpy="0 0 0"/>
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}base"/>
+    </joint>
+  </xacro:macro>
+</robot>

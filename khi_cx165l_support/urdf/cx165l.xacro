@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<robot name="cx165l" xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:include filename="$(find khi_cx165l_support)/urdf/cx165l_macro.xacro"/>
+    <xacro:khi_cx165l prefix=""/>
+</robot>
