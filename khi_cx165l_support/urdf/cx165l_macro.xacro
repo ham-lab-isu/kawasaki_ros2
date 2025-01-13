@@ -27,7 +27,7 @@
     <xacro:property name="j4_mass" value="109"/>
     <xacro:property name="j5_mass" value="72"/>
     <xacro:property name="j6_mass" value="3"/>
-    
+
     <!-- joint limits [rad] -->
     <xacro:property name="j1_lower_limit" value="${radians(-160)}"/>
     <xacro:property name="j1_upper_limit" value="${radians( 160)}"/>
