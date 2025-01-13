@@ -1,0 +1,34 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/wglockner/sng_ws/install/tesseract_msgs/lib/python3.10/site-packages",
+        "/home/wglockner/sng_ws/build/snp_scanning",
+        "/home/wglockner/sng_ws/install/snp_scanning/lib/python3.10/site-packages",
+        "/home/wglockner/sng_ws/install/snp_msgs/lib/python3.10/site-packages",
+        "/home/wglockner/sng_ws/install/snp_isu_msgs/lib/python3.10/site-packages",
+        "/home/wglockner/sng_ws/install/rviz_polygon_selection_tool/lib/python3.10/site-packages",
+        "/home/wglockner/sng_ws/install/khi_robot_msgs/lib/python3.10/site-packages",
+        "/home/wglockner/sng_ws/build/industrial_reconstruction",
+        "/home/wglockner/sng_ws/install/industrial_reconstruction/lib/python3.10/site-packages",
+        "/home/wglockner/sng_ws/install/industrial_reconstruction_msgs/lib/python3.10/site-packages",
+        "/home/wglockner/sng_ws/install/industrial_msgs/lib/python3.10/site-packages",
+        "/home/wglockner/sng_ws/install/btcpp_ros2_interfaces/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/wglockner/sng_ws/install/tesseract_msgs/lib/python3.10/site-packages",
+        "/home/wglockner/sng_ws/build/snp_scanning",
+        "/home/wglockner/sng_ws/install/snp_scanning/lib/python3.10/site-packages",
+        "/home/wglockner/sng_ws/install/snp_msgs/lib/python3.10/site-packages",
+        "/home/wglockner/sng_ws/install/snp_isu_msgs/lib/python3.10/site-packages",
+        "/home/wglockner/sng_ws/install/rviz_polygon_selection_tool/lib/python3.10/site-packages",
+        "/home/wglockner/sng_ws/install/khi_robot_msgs/lib/python3.10/site-packages",
+        "/home/wglockner/sng_ws/build/industrial_reconstruction",
+        "/home/wglockner/sng_ws/install/industrial_reconstruction/lib/python3.10/site-packages",
+        "/home/wglockner/sng_ws/install/industrial_reconstruction_msgs/lib/python3.10/site-packages",
+        "/home/wglockner/sng_ws/install/industrial_msgs/lib/python3.10/site-packages",
+        "/home/wglockner/sng_ws/install/btcpp_ros2_interfaces/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}

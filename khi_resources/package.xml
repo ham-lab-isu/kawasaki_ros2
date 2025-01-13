@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="2">
+  <name>khi_resources</name>
+  <version>0.1.0</version>
+  <description>
+    <p>Shared configuration data, 3D models, launch files materials, etc. for kawasaki robots.</p>
+    <p>
+      This package contains shared configuration data, 3D models, launch files
+      materials, etc. that are shared between different kawasaki robot packages.
+    </p>
+    <p>
+      Approach inspired by the motoman_resources package. See https://github.com/ros-industrial/motoman.
+    </p>
+  </description>
+  <author>Walter Glockner</author>
+  <maintainer email="walterg@iastate.edu">Walter Glockner (Iowa State University)</maintainer>
+  <license>BSD</license>
+
+  <url type="bugtracker">https://github.com/ham-lab-isu/khi_resources/issues</url>
+  <url type="repository">https://github.com/ham-lab-isu/khi_resources</url>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+    <!-- <architecture_independent/> -->
+  </export>
+</package>

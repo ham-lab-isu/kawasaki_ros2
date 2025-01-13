@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find khi_resources)/urdf/common_colors.xacro"/>
+  <!-- Munsell 10GY9/1 -->
+  <xacro:macro name="material_kawasaki_white">
+    <material name="">
+      <color rgba="${color_kawasaki_white}"/>
+    </material>
+  </xacro:macro>
+
+  <!-- not an official color, but used in some xacro:macros -->
+  <xacro:macro name="material_kawasaki_black">
+    <material name="">
+      <color rgba="${color_kawasaki_black}"/>
+    </material>
+  </xacro:macro>
+
+  <!-- not an official color, but used in some old xacro:macros -->
+  <xacro:macro name="material_kawasaki_red">
+    <material name="">
+      <color rgba="${color_kawasaki_red}"/>
+    </material>
+  </xacro:macro>
+</robot>

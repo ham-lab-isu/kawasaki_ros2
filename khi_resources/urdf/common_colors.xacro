@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- Munsell 10GY9/1 -->
+  <xacro:property name="color_kawasaki_white" value="0.88 0.93 0.854 1"/>
+
+  <!-- not an official color, but used in xacro:macros -->
+  <xacro:property name="color_kawasaki_black" value="0 0 0 1"/>
+
+  <!-- not an official color, but used in some macros -->
+  <xacro:property name="color_kawasaki_red" value="1 0 0 1"/>
+</robot>

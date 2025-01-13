@@ -1,0 +1,12 @@
+- git:
+    local-name: BehaviorTree.CPP
+    uri: https://github.com/BehaviorTree/BehaviorTree.CPP.git
+    version: 4.4.3
+- git:
+    local-name: BehaviorTree.ROS2
+    uri: https://github.com/marip8/BehaviorTree.ROS2.git
+    version: fd9e565591b019fc55d579577737d7879a88a4a0
+- git:
+    local-name: khi_robot_interfaces
+    uri: https://github.com/ham-lab-isu/khi_robot_interfaces.git
+    version: 95e21f7ddd0a4ac6f64f4f16454195bef9983985

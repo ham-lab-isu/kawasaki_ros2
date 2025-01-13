@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="4" project_name="Project">
+    <include path="khi_robot_bt.xml"/>
+    <!-- Description of Node Models (used by Groot) -->
+    <TreeNodesModel>
+        <Action ID="KhiRobotCmd" editable="true">
+            <input_port name="service_name" default="khi_robot_cmd"/>
+            <input_port name="type"/>
+            <input_port name="cmd"/>
+            <output_port name="driver_ret"/>
+            <output_port name="as_ret"/>
+            <output_port name="cmd_ret"/>
+        </Action>
+    </TreeNodesModel>
+</root>
